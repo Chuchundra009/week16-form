@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Форма регистрации:</h1>
+        <form class="form" name="oneForm" novalidate>
+            <div class="form__name">
+                <label for="secondName">Введите Имя:</label>
+                <input type="text" placeholder="Введите имя..." name="secondName" id="textName" minlength="2" pattern="^[А-Яа-яЁёa-zA-Z]+$" required>
+
+                <p class="error-message"></p>
+            </div>
+            <div class="form__email">
+                <label for="secondEmail">Email:</label>
+                <input type="email" name="secondEmail" id="textEmail" pattern="^[A-Z0-9\._%\+-]+@[A-Z0-9-]+\.[A-Z]{2,4}$" placeholder="Введите email..." required>
+
+                <p class="error-message"></p>
+            </div>
+            <div class="form__year">
+                <label for="secondYear">Сколько лет?</label>
+                <input type="number" id="secondYear" placeholder="Введите свой возраст..." min="0"  max="100" required>
+
+                <p class="error-message"></p>
+            </div>
+            <div class="form__profession">
+                <label for="secondSelect">Ваша профессия:</label>
+                <select name="secondSelect" id="choiceSelect">
+                    <option value="o1">Врач</option>
+                    <option value="o2">Программист</option>
+                    <option value="o3">Учитель</option>
+                    <option value="o4">Дизайнер</option>
+                    <option value="o5">Инженер</option>
+                    <option value="o6">Продавец</option>
+                    <option value="o7">Другое</option>
+                </select>
+            </div>
+            <div class="form__password">
+                <label for="secondPassword">Пароль:</label>
+                <input name="newPassword" type="password" id="secondPassword" placeholder="Введите пароль..." minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" required>
+
+                <p class="error-message"></p>
+            </div>
+            <div class="form__passrep">
+                <label for="repeatPassword">Повторите пароль:</label>
+                <input type="password" id="repeatPassword"  placeholder="Повторите пароль..."  minlength="8" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/" name="passwordTwo" required>
+
+                <p class="error-message"></p>
+            </div>
+            <div class="form__checkbox">
+                <input id="formAgreement" type="checkbox" name="secondCheckbox" required>
+                <label for="formAgreement"><span>Согласие на обработку персональных данных</span></label>
+
+                <p class="error-message"></p>
+            </div>
+            <div class="form__btn">
+                <input class="form__btn-text" type="submit" name="sendForm" id="btnText"  value="Отправить">
+            </div>
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
